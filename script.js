@@ -136,6 +136,23 @@ function displayCartItem(item) {
   itemGrid.classList.append("grid-container")
 }
 
+function removeItem(element) {
+  // get array of all cart items
+  let itemsString = sessionStorage.getItem('cartItems')
+  let items = JSON.parse(itemsString)
+
+  // find name of item to remove
+  let item = element.classList[1]
+
+  // remove item from all cart items
+  let index = items.indexOf(item)
+  items.splice(0, index)
+
+  // update sessionStorage for all cart items
+  let newItemsString = JSON.stringify(items)
+  sessionStorage.setItem("cartItems", newItemsString)
+}
+
 function init() {
   if (sessionStorage.getItem('cartItems') == null) {
     sessionStorage.setItem('cartItems', '[]')
