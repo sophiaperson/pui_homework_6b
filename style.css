@@ -474,13 +474,13 @@ button:hover {
 
 .cart-items-flex {
   flex-direction: column;
+  margin-top: 50px;
 }
 
 .cart-item-grid {
   grid-template-columns: 10% auto;
   border-bottom: 2px solid black;
-  padding-bottom: 20px;
-  padding-top: 10px;
+  margin-bottom: 50px;
 }
 
 .cart-item-info-grid {
