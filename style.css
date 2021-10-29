@@ -477,10 +477,14 @@ button:hover {
 }
 
 .cart-item-grid {
-  grid-template-columns: 10% 25% 25% 25% auto;
+  grid-template-columns: 10% auto;
   border-bottom: 2px solid black;
   padding-bottom: 20px;
   padding-top: 10px;
+}
+
+.cart-item-info-grid {
+  grid-template-columns: 25% 25% 25% auto; 
 }
 
 .cart-item-details {
@@ -490,14 +494,20 @@ button:hover {
 .cart-item-name {
   font-size: 20px;
   font-weight: bold;
+  display: block;
 }
 
 .cart-item-close {
-
+  height: max-content;
+  width: min-content;
+  position: relative;
+  top: 20%;
 }
 
 .cart-item-price {
-
+  margin: 7px;
+  height: max-content;
+  width: max-content;
 }
 
 .cart-item-quantity {
@@ -510,6 +520,11 @@ button:hover {
 
 .cart-item-color-grid {
 
+}
+
+.cart-item-selected-details {
+  display: inline-block;
+  height: 100px;
 }
 
 
@@ -601,6 +616,10 @@ button:hover {
   border: 2px solid #ddd;
   border-radius: 10px;
   margin-top: 5px;
+}
+
+.cart-item-quantity > select {
+  margin-top: 0px;
 }
 
 #slideshow-grid {
