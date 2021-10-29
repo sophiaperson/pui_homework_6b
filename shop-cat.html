@@ -1,0 +1,189 @@
+<!--shop-cat.html-->
+<!--shopping cart icon credit: Fasil (https://freeicons.io/ios-edge/shopping-cart-icon-29332)-->
+<!--image credit: Roberto Lopez ("https://images.unsplash.com/photo-1511754268731-ac0b89398b2c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGRvZyUyMGNvbGxhcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <script type="text/javascript" src="script.js"></script>
+    <title>Muddy Paws - Adventure Gear</title>
+  </head>
+  <body onload="onLoad()">
+    <header>
+      <div id="banner-grid" class="grid-container">
+        <a id="homenav" href="index.html">
+          <div id="banner-logo-grid" class="grid-container">
+            <img id="logo-icon" height="50" width="50" src="logo-icon.png" alt="logo containing cat and dog under mountain">
+            <div id="brand-name-grid" class="grid-container">
+              <div id="brand-name">Muddy Paws</div>
+              <div id="brand-slogan">Adventure Gear</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="topnav flex-container">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink" href="shop-dog.html">Shop Dog</a>
+          <a class="navlink active" href="shop-cat.html">Shop Cat</a>
+          <a class="navlink" href="contact.html">Contact</a>
+          <a class="navlink" href="about.html">About</a>
+          <a id="cart" class="navlink" href="cart.html">
+            <img id="cart-icon" width="20" height="20" src="cart-icon.svg" alt="cart icon">
+            <div id="cart-notification" style="visibility: hidden;"></div>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div id="cats-grid" class="products-grid grid-container">
+      <div id="cats-header">
+        <h2>Cats</h2>
+      </div>
+      <div id="cats-products-flex" class="products-flex flex-container">
+
+
+        <div class="product-grid grid-container">
+            <div class="product-img-container">
+              <a href="harness.html">
+              
+                <img id="product1" class="product-img" src="https://images.unsplash.com/photo-1580129518790-0482fc5eed65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80">
+              </a>
+            </div>
+
+            <div class="product-info-grid">
+              <div class="top-left product-title">
+                <a class="product-title" href="harness.html">Harness</a>
+              </div>
+              
+              <div class="top-right product-price">$50</div>
+
+              <div class="bottom-left">
+                <div class="product-colors-grid grid-container">
+                  <label class="container small-color">
+                    <input type="radio" checked="checked" name="product1-color">
+                    <span class="checkmark small-color" style="background-color: red"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product1-color">
+                    <span class="checkmark small-color" style="background-color: purple"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product1-color">
+                    <span class="checkmark small-color" style="background-color: magenta"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product1-color">
+                    <span class="checkmark small-color" style="background-color: orange"></span>
+                  </label>
+                    
+                </div>
+              </div>
+
+              <div class="bottom-right product-color-label">Strawberry</div>
+            </div>
+          </div>
+
+
+          <div class="product-grid grid-container">
+            <div class="product-img-container">
+              <a href="harness.html">
+              
+                <img id="product1" class="product-img" src="https://images.unsplash.com/photo-1580129518790-0482fc5eed65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80">
+              </a>
+            </div>
+
+            <div class="product-info-grid">
+              <div class="top-left product-title">
+                <a class="product-title" href="harness.html">Harness</a>
+              </div>
+              
+              <div class="top-right product-price">$50</div>
+
+              <div class="bottom-left">
+                <div class="product-colors-grid grid-container">
+                  <label class="container small-color">
+                    <input type="radio" checked="checked" name="product2-color">
+                    <span class="checkmark small-color" style="background-color: red"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product2-color">
+                    <span class="checkmark small-color" style="background-color: purple"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product2-color">
+                    <span class="checkmark small-color" style="background-color: magenta"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product2-color">
+                    <span class="checkmark small-color" style="background-color: orange"></span>
+                  </label>
+                    
+                </div>
+              </div>
+
+              <div class="bottom-right product-color-label">Strawberry</div>
+            </div>
+          </div>
+
+
+          <div class="product-grid grid-container">
+            <div class="product-img-container">
+              <a href="harness.html">
+              
+                <img id="product1" class="product-img" src="https://images.unsplash.com/photo-1580129518790-0482fc5eed65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80">
+              </a>
+            </div>
+
+            <div class="product-info-grid">
+              <div class="top-left">
+                <a class="product-title" href="harness.html">Harness</a>
+              </div>
+              
+              <div class="top-right product-price">$50</div>
+
+              <div class="bottom-left">
+                <div class="product-colors-grid grid-container">
+                  <label class="container small-color">
+                    <input type="radio" checked="checked" name="product3-color">
+                    <span class="checkmark small-color" style="background-color: red"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product3-color">
+                    <span class="checkmark small-color" style="background-color: purple"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product3-color">
+                    <span class="checkmark small-color" style="background-color: magenta"></span>
+                  </label>
+                  <label class="container small-color">
+                    <input type="radio" name="product3-color">
+                    <span class="checkmark small-color" style="background-color: orange"></span>
+                  </label>
+                    
+                </div>
+              </div>
+
+              <div class="bottom-right product-color-label">Strawberry</div>
+            </div>
+
+
+        
+        
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>2021 Muddy Paws</p>
+      <div>
+        Logo icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
+    </footer>
+
+  </body>
+
+</html>

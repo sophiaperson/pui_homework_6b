@@ -1,0 +1,85 @@
+<!--receipt.html-->
+<!--shopping cart icon credit: Fasil (https://freeicons.io/ios-edge/shopping-cart-icon-29332)-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <title>Muddy Paws - Adventure Gear</title>
+  </head>
+  <body>
+    <header>
+      <div id="banner-grid" class="grid-container">
+        <a id="homenav" href="index.html">
+          <div id="banner-logo-grid" class="grid-container">
+            <img id="logo-icon" height="50" width="50" src="logo-icon.png" alt="logo containing cat and dog under mountain">
+            <div id="brand-name-grid" class="grid-container">
+              <div id="brand-name">Muddy Paws</div>
+              <div id="brand-slogan">Adventure Gear</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="topnav flex-container">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink active" href="shop-dog.html">Shop Dog</a>
+          <a class="navlink" href="shop-cat.html">Shop Cat</a>
+          <a class="navlink" href="contact.html">Contact</a>
+          <a class="navlink" href="about.html">About</a>
+          <a id="cart" class="navlink" href="cart.html">
+            <img id="cart-icon" width="20" height="20" src="cart-icon.svg" alt="cart icon">
+            <div id="cart-notification" style="visibility: hidden;"></div>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    
+    <div class="checkout-progress">
+      Cart /  Checkout / <strong>Receipt</strong>
+    </div>
+
+    <h1>Receipt</h1>
+
+    <h2>Thank you for your purchase!</h2>
+
+    <div class="cart-items-grid grid-container">
+      <div class="cart-item-grid grid-container">
+        <div class="cart-item-image"></div>
+        <div class="cart-item-selected-details"></div>
+        <div class="cart-item-price"></div>
+        <div class="cart-item-quantity"></div>
+        <div class="cart-item-total"></div>
+      </div>
+
+    </div>
+
+    <div>Sub-total</div>
+    <div>Shipping Total</div>
+    <div>Tax</div>
+    <div>Order Total</div>
+
+    <footer>
+      <p>2021 Muddy Paws</p>
+      <div>
+        Logo icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      let itemsString = sessionStorage.getItem('cartItems')
+      let items = JSON.parse(itemsString)
+      let numItems = items.length
+      let notification = document.getElementById("cart-notification")
+      if (notification != null) {
+        notification.innerHTML = numItems.toString()
+        notification.style.visibility = "visible"
+      }
+    </script>
+
+  </body>
+
+</html>

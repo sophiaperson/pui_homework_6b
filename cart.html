@@ -1,0 +1,173 @@
+<!--cart.html-->
+<!--shopping cart icon credit: Fasil (https://freeicons.io/ios-edge/shopping-cart-icon-29332)-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <script type="text/javascript" src="script.js"></script>
+    <title>Muddy Paws - Adventure Gear</title>
+  </head>
+  <body onload="onLoad()">
+    <header>
+      <div id="banner-grid" class="grid-container">
+        <a id="homenav" href="index.html">
+          <div id="banner-logo-grid" class="grid-container">
+            <img id="logo-icon" height="50" width="50" src="logo-icon.png" alt="logo containing cat and dog under mountain">
+            <div id="brand-name-grid" class="grid-container">
+              <div id="brand-name">Muddy Paws</div>
+              <div id="brand-slogan">Adventure Gear</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="topnav flex-container">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink active" href="shop-dog.html">Shop Dog</a>
+          <a class="navlink" href="shop-cat.html">Shop Cat</a>
+          <a class="navlink" href="contact.html">Contact</a>
+          <a class="navlink" href="about.html">About</a>
+          <a id="cart" class="navlink" href="cart.html">
+            <img id="cart-icon" width="20" height="20" src="cart-icon.svg" alt="cart icon">
+            <div id="cart-notification" style="visibility: hidden;"></div>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div id="cart-container">
+      <div class="checkout-progress">
+        <strong>Cart</strong> / Checkout / Receipt
+      </div>
+
+      <h1>Cart</h1>
+
+      <div class="cart-items-flex flex-container">
+        <div class="cart-item-grid grid-container">
+          <img id="product1" class="cart-item-image" src="https://images.unsplash.com/photo-1580129518790-0482fc5eed65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80" alt="black dog wearing blue harness">
+
+          <div class="cart-item-selected-details">
+            <div class="cart-item-name">Harness</div>
+            <div class="cart-item-size-grid">
+              <div id="cart-size-selection-grid" class="cart-selection-grid grid-container">
+                <div>
+                  <label class="detail-label">Size:</label>
+                  <label id="selected-size" class="selected-label">Tiny</label>
+                </div>
+                <form id="size-selection" class="selection-option-flex flex-container">
+                  <label class="container" onmouseover="hoverSize('Tiny')" onmouseout="mouseOutSize()">
+                    <input type="radio" checked="checked" name="size" value="tiny">
+                    <span class="checkmark">
+                      <div class="centered" style="text-align: center;">T</div>
+                    </span>
+                  </label>
+                  <label class="container" onmouseover="hoverSize('Small')" onmouseout="mouseOutSize()">
+                    <input type="radio" name="size" value="small">
+                    <span class="checkmark">
+                      <div class="centered" style="text-align: center;">S</div>
+                    </span>
+                  </label>
+                  <label class="container" onmouseover="hoverSize('Medium')" onmouseout="mouseOutSize()">
+                    <input type="radio" name="size" value="medium">
+                    <span class="checkmark">
+                      <div class="centered" style="text-align: center;">M</div>
+                    </span>
+                  </label>
+                  <label class="container" onmouseover="hoverSize('Large')" onmouseout="mouseOutSize()">
+                    <input type="radio" name="size" value="large">
+                    <span class="checkmark">
+                      <div class="centered" style="text-align: center;">L</div>
+                    </span>
+                  </label>
+                </form>
+
+              </div>
+            </div>
+            <div class="cart-item-color-grid">
+              <div id="cart-color-selection-grid" class="cart-selection-grid grid-container">
+                <div>
+                  <label class="detail-label">Color:</label>
+                  <label id="selected-color" class="selected-label">Strawberry</label>
+                </div>
+                <form id="color-selection" class="selection-option-flex flex-container">
+                  <label class="container" onmouseover="hoverColor('Strawberry')" onmouseout="mouseOutColor()">
+                    <input type="radio" checked="checked" name="color" value="strawberry">
+                    <span class="checkmark" style="background-color: red"></span>
+                  </label>
+                  <label class="container" onmouseover="hoverColor('Blackberry')" onmouseout="mouseOutColor()">
+                    <input type="radio" name="color" value="blackberry">
+                    <span class="checkmark" style="background-color: purple"></span>
+                  </label>
+                  <label class="container" onmouseover="hoverColor('Crazyberry')" onmouseout="mouseOutColor()">
+                    <input type="radio" name="color" value="crazyberry">
+                    <span class="checkmark" style="background-color: magenta;"></span>
+                  </label>
+                  <label class="container" onmouseover="hoverColor('Fire Orange')" onmouseout="mouseOutColor()">
+                    <input type="radio" name="color" value="fire-orange">
+                    <span class="checkmark" style="background-color: orange"></span>
+                  </label>
+                </form>
+
+              </div>
+            </div>
+            
+          </div>
+
+        
+
+        
+
+        
+
+          <div class="cart-item-quantity">
+            <div class="selection-grid grid-container">
+              <label class="detail-label">Quantity:</label>
+              <select id="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="cart-item-price">$50</div>
+          <div class="close">&times;</div>
+        </div>
+          
+      </div>
+      <div class="cart-total-flex flex-container">
+        <div class="cart-total-container-labels">
+          <div class="cart-subtotal">Subtotal</div>
+          <div class="cart-shipping">Shipping and Handling</div>
+          <div class="cart-tax">Tax</div>
+          <div class="cart-total">Total</div>
+        </div>
+        <div class="cart-total-container-values">
+          <div class="cart-subtotal">$50.00</div>
+          <div class="cart-shipping">$5.00</div>
+          <div class="cart-tax">$5.50</div>
+          <div class="cart-total">$60.50</div>
+        </div>
+      </div>
+      <a id="proceed-checkout-button" href="checkout.html">Proceed to checkout</a>
+    </div>
+
+    <footer>
+      <p>2021 Muddy Paws</p>
+      <div>
+        Logo icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
+    </footer>
+  </body>
+
+</html>

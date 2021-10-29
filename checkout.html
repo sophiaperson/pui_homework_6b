@@ -1,0 +1,136 @@
+<!--checkout.html-->
+<!--shopping cart icon credit: Fasil (https://freeicons.io/ios-edge/shopping-cart-icon-29332)-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet"> 
+    <script type="text/javascript" src="script.js"></script>
+    <title>Muddy Paws - Adventure Gear</title>
+  </head>
+  <body onload="onLoad()">
+    <header>
+      <div id="banner-grid" class="grid-container">
+        <a id="homenav" href="index.html">
+          <div id="banner-logo-grid" class="grid-container">
+            <img id="logo-icon" height="50" width="50" src="logo-icon.png" alt="logo containing cat and dog under mountain">
+            <div id="brand-name-grid" class="grid-container">
+              <div id="brand-name">Muddy Paws</div>
+              <div id="brand-slogan">Adventure Gear</div>
+            </div>
+          </div>
+        </a>
+
+        <div class="topnav flex-container">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink active" href="shop-dog.html">Shop Dog</a>
+          <a class="navlink" href="shop-cat.html">Shop Cat</a>
+          <a class="navlink" href="contact.html">Contact</a>
+          <a class="navlink" href="about.html">About</a>
+          <a id="cart" class="navlink" href="cart.html">
+            <img id="cart-icon" width="20" height="20" src="cart-icon.svg" alt="cart icon">
+            <div id="cart-notification" style="visibility: hidden;"></div>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="checkout-progress">
+      <a href="cart.html">Cart</a> / 
+      <strong>Checkout</strong> / Receipt
+    </div>
+
+    <h1>Checkout</h1>
+
+    <h2>Shipping Address</h1>
+    <div>
+      <input type="text" name="fname">
+      <label for="fname">First Name:</label>
+      <input type="text" name="lname">
+      <label for="lname">Last Name:</label>
+      <input type="text" name="address">
+      <label for="address">Address:</label>
+      <input type="text" name="address2">
+      <label for="address2">Address 2:</label>
+      <input type="text" name="city">
+      <label for="city">City:</label>
+      <select name="state">
+        <option value="pa">PA</option>
+        <option value="wa">WA</option>
+        <option value="nj">NJ</option>
+      </select>
+      <input type="text" name="zip">
+      <label for="zip">Zip / Postal Code:</label>
+      <input type="text" name="telephone">
+      <label for="telephone">Telephone:</label>
+    </div>
+
+    <h2>Billing Address</h1>
+    <div>
+      <input type="text" name="bill-fname">
+      <label for="bill-fname">First Name:</label>
+      <input type="text" name="bill-lname">
+      <label for="bill-lname">Last Name:</label>
+      <input type="text" name="bill-address">
+      <label for="bill-address">Address:</label>
+      <input type="text" name="bill-address2">
+      <label for="bill-address2">Address 2:</label>
+      <input type="text" name="bill-city">
+      <label for="bill-city">City:</label>
+      <select name="bill-state">
+        <option value="pa">PA</option>
+        <option value="wa">WA</option>
+        <option value="nj">NJ</option>
+      </select>
+      <input type="text" name="bill-zip">
+      <label for="bill-zip">Zip / Postal Code:</label>
+      <input type="text" name="bill-telephone">
+      <label for="bill-telephone">Telephone:</label>
+    </div>
+
+
+    <h2>Payment</h2>
+    <div>
+      <input type="text" name="credit-card-number">
+      <label for="credit-card-number">Credit Card Nunber</label>
+      <input type="text" name="credit-card-exp">
+      <label for="credit-card-exp">Expiration Date</label>
+      <input type="text" name="credit-card-sec">
+      <label for="credit-card-sec">Card Security Code</label>
+      <input type="text" name="email">
+      <label for="email">Email</label>
+    </div>
+
+    <h2>Review</h2>
+    <div class="cart-items-grid grid-container">
+      <div class="cart-item-grid grid-container">
+        <div class="cart-item-image"></div>
+        <div class="cart-item-selected-details"></div>
+        <div class="cart-item-price"></div>
+        <div class="cart-item-quantity"></div>
+        <div class="cart-item-total"></div>
+      </div>
+
+    </div>
+
+    <div>Sub-total</div>
+    <div>Shipping Total</div>
+    <div>Estimated Arrival Date</div>
+    <div>Tax</div>
+    <div>Order Total</div>
+
+    <a id="place-order-button" href="receipt.html">Place your order</a>
+
+    <footer>
+      <p>2021 Muddy Paws</p>
+      <div>
+        Logo icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      </div>
+    </footer>
+
+  </body>
+
+</html>
