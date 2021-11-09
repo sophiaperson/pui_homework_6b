@@ -47,45 +47,8 @@
 
       <div id="cart-items-flex" class="flex-container">
 
-        <!--
-        <div class="cart-item-grid grid-container">
-          <img id="product1" class="cart-item-image" src="https://images.unsplash.com/photo-1580129518790-0482fc5eed65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80" alt="black dog wearing blue harness">
-
-          <div>
-            <div class="cart-item-name">Harness</div>
-            
-            <div class="cart-item-info-grid grid-container">
-
-              <div class="cart-item-selected-details">
-                
-                <div>
-                  <label class="detail-label">Size:</label>
-                  <label id="selected-size" class="detail-label bold">Tiny</label>
-                </div>
-                <div>
-                  <label class="detail-label">Color:</label>
-                  <label id="selected-color" class="detail-label bold">Strawberry</label>
-                </div>
-                
-              </div>
-
-              <div class="cart-item-quantity">
-                <label class="detail-label">Quantity:</label>
-                <label id="selected-quantity" class="detail-label bold">1</label>
-
-              </div>
-
-              <div>
-                <label class="detail-label">Price:</label>
-                <label id="item-price" class="detail-label bold">$50</label>
-              </div>
-              <button class="cart-item-close">Remove</button>
-            </div>
-          </div>
-        </div>
-        -->
-
       </div>
+
       <div class="cart-total-flex flex-container">
         <div class="cart-total-container-labels">
           <div class="cart-subtotal">Subtotal</div>
@@ -94,10 +57,10 @@
           <div class="cart-total">Total</div>
         </div>
         <div class="cart-total-container-values">
-          <div class="cart-subtotal">$50.00</div>
-          <div class="cart-shipping">$5.00</div>
-          <div class="cart-tax">$5.50</div>
-          <div class="cart-total">$60.50</div>
+          <div id="cart-subtotal-value" class="cart-subtotal"></div>
+          <div id="cart-shipping-value" class="cart-shipping"></div>
+          <div id="cart-tax-value" class="cart-tax"></div>
+          <div id="cart-total-value" class="cart-total"></div>
         </div>
       </div>
       <a id="proceed-checkout-button" href="checkout.html">Proceed to checkout</a>

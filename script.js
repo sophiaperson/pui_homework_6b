@@ -1,5 +1,8 @@
 // script.js
 
+const shippingCost = 5.5
+const taxPercent = 1.07
+
 function CartItem(size, color, quantity, name, price, imageUrl) {
   this.size = size
   this.color = color
@@ -259,6 +262,87 @@ function removeItem(element) {
   window.location.reload()
 }
 
+function getCartSubtotal() {
+  let itemsString = sessionStorage.getItem('cartItems')
+  let items = JSON.parse(itemsString)
+  console.log(items)
+  let numItems = items.length
+  let cartSubtotalNum = 0
+  for (let i=0; i < numItems; i++) {
+    let item = items[i]
+    cartSubtotalNum += Number(getItemTotalPrice(item).slice(1))
+  }
+  console.log(cartSubtotalNum)
+  let cartSubtotalString = "$" + cartSubtotalNum.toFixed(2)
+  return cartSubtotalString
+}
+
+function getShipping() {
+  let itemsString = sessionStorage.getItem('cartItems')
+  let items = JSON.parse(itemsString)
+  let numItems = items.length
+  let shippingCostString = "$0.00"
+  if (numItems > 0) {
+    shippingCostString = "$" + shippingCost.toFixed(2)
+  }
+  return shippingCostString
+}
+
+function getTax() {
+  let itemsString = sessionStorage.getItem('cartItems')
+  let items = JSON.parse(itemsString)
+  console.log(items)
+  let numItems = items.length
+  let cartSubtotalNum = 0
+  if (numItems > 0) {
+    for (let i=0; i < numItems; i++) {
+      let item = items[i]
+      cartSubtotalNum += Number(getItemTotalPrice(item).slice(1))
+    }
+    let taxNum = cartSubtotalNum * (taxPercent - 1)
+    let taxString = "$" + taxNum.toFixed(2)
+    return taxString
+  }
+  return "$0.00"
+}
+
+function getCartTotal() {
+  let itemsString = sessionStorage.getItem('cartItems')
+  let items = JSON.parse(itemsString)
+  console.log(items)
+  let numItems = items.length
+  let cartTotalNum = 0
+  let cartSubtotalNum = 0
+  if (numItems > 0) {
+    for (let i=0; i < numItems; i++) {
+      let item = items[i]
+      cartSubtotalNum += Number(getItemTotalPrice(item).slice(1))
+    }
+    
+    cartTotalNum = (cartSubtotalNum + shippingCost) * taxPercent
+    let cartTotalString = "$" + cartTotalNum.toFixed(2)
+
+    console.log(cartTotalString)
+    return cartTotalString
+  }
+  return "$0.00"
+}
+
+function displayCartTotal() {
+  let subtotal = getCartSubtotal()
+  let shipping = getShipping()
+  let tax = getTax()
+  let total = getCartTotal()
+  console.log(subtotal)
+  console.log(shipping)
+  console.log(tax)
+  console.log(total)
+  document.getElementById("cart-subtotal-value").innerHTML = subtotal
+  document.getElementById("cart-shipping-value").innerHTML = shipping
+  document.getElementById("cart-tax-value").innerHTML = tax
+  document.getElementById("cart-total-value").innerHTML = total
+}
+
 function init() {
   if (sessionStorage.getItem('cartItems') == null) {
     sessionStorage.setItem('cartItems', '[]')
@@ -285,5 +369,7 @@ function onLoad() {
       itemElement = createCartItem(item)
       cartFlex.appendChild(itemElement)
     }
+    getCartTotal()
+    displayCartTotal()
   }
 }
