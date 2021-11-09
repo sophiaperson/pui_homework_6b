@@ -131,11 +131,104 @@ function capitalizeFirstLetter(str) {
   return str
 }
 
-function displayCartItem(item) {
-  let itemGrid = document.createElement("div")
-  itemGrid.classList.append("grid-container")
+function getItemTotalPrice(item) {
+  // remove the dollar sign from the string representing the price of 1 item
+  let priceStr = item.price.slice(1)
+  let priceNum = Number(priceStr)
+  // multiply the price of 1 item with the quantity of items
+  let totalPriceNum = priceNum * Number(item.quantity)
+  // turn this number back into a string and attach a $ before it
+  let totalPriceStr = "$" + totalPriceNum.toString()
+  return totalPriceStr
 }
 
+function createCartItem(item) {
+  // create elements to attach to DOM in cart flexbox 
+  let itemGrid = document.createElement("div")
+  itemGrid.classList.add("cart-item-grid", "grid-container")
+
+  let itemImage = document.createElement("img")
+  itemImage.classList.add("cart-item-image")
+  itemImage.setAttribute("src", item.imageUrl)
+
+  let itemDiv = document.createElement("div")
+
+  let itemName = document.createElement("div")
+  itemName.classList.add("cart-item-name")
+  itemName.innerHTML = item.name
+
+  let itemInfoGrid = document.createElement("div")
+  itemInfoGrid.classList.add("cart-item-info-grid", "grid-container")
+
+  let itemSelectedDetails = document.createElement("div")
+  itemSelectedDetails.classList.add("cart-item-selected-details")
+
+  let sizeDiv = document.createElement("div")
+  let sizeLabel = document.createElement("label")
+  sizeLabel.classList.add("detail-label")
+  sizeLabel.innerHTML = "Size: "
+  let itemSize = document.createElement("label")
+  itemSize.classList.add("detail-label", "bold")
+  itemSize.innerHTML = capitalizeFirstLetter(item.size)
+  let colorDiv = document.createElement("div")
+  let colorLabel = document.createElement("label")
+  colorLabel.classList.add("detail-label")
+  colorLabel.innerHTML = "Color: "
+  let itemColor = document.createElement("label")
+  itemColor.classList.add("detail-label", "bold")
+  itemColor.innerHTML = capitalizeFirstLetter(item.color)
+
+  let quantityDiv = document.createElement("div")
+  quantityDiv.classList.add("cart-item-quantity")
+  let quantityLabel = document.createElement("label")
+  quantityLabel.classList.add("detail-label")
+  quantityLabel.innerHTML = "Quantity: "
+  let itemQuantity = document.createElement("label")
+  itemQuantity.classList.add("detail-label", "bold")
+  itemQuantity.innerHTML = item.quantity
+
+  let priceDiv = document.createElement("div")
+  priceDiv.classList.add("cart-item-price")
+  let priceLabel = document.createElement("label")
+  priceLabel.classList.add("detail-label")
+  priceLabel.innerHTML = "Price: "
+  let itemPrice = document.createElement("label")
+  itemPrice.classList.add("detail-label", "bold")
+  itemPrice.innerHTML = getItemTotalPrice(item)
+
+  let closeButton = document.createElement("button")
+  closeButton.classList.add("cart-item-close")
+  closeButton.innerHTML = "Remove"
+  closeButton.addEventListener("click", function () {
+    console.log("Remove Button Clicked")
+  }) 
+
+  // attach items to item grid container
+  itemGrid.appendChild(itemImage)
+  itemGrid.appendChild(itemDiv)
+  itemDiv.appendChild(itemName)
+  itemDiv.appendChild(itemInfoGrid)
+  itemInfoGrid.appendChild(itemSelectedDetails)
+  itemSelectedDetails.appendChild(sizeDiv)
+  sizeDiv.appendChild(sizeLabel)
+  sizeDiv.appendChild(itemSize)
+  itemSelectedDetails.appendChild(colorDiv)
+  colorDiv.appendChild(colorLabel)
+  colorDiv.appendChild(itemColor)
+  itemInfoGrid.appendChild(quantityDiv)
+  quantityDiv.appendChild(quantityLabel)
+  quantityDiv.appendChild(itemQuantity)
+  itemInfoGrid.appendChild(priceDiv)
+  priceDiv.appendChild(priceLabel)
+  priceDiv.appendChild(itemPrice)
+  itemInfoGrid.appendChild(closeButton)
+
+  // return the element with all the nodes that can later be attached to the DOM
+  return itemGrid
+}
+
+
+// remove item from sessionStorage
 function removeItem(element) {
   // get array of all cart items
   let itemsString = sessionStorage.getItem('cartItems')
@@ -171,6 +264,13 @@ function onLoad() {
       notification.style.visibility = "visible"
     }
   }
-  console.log(items)
-  console.log(notification.innerHTML)
+  // display cart if the current page is the cart page
+  if (document.getElementById("cart-container") != null) {
+    let cartFlex = document.getElementById("cart-items-flex")
+    for (let i = 0; i < numItems; i++) {
+      let item = items[i]
+      itemElement = createCartItem(item)
+      cartFlex.appendChild(itemElement)
+    }
+  }
 }

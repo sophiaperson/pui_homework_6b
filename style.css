@@ -470,10 +470,7 @@ button:hover {
   object-fit: cover;
 }
 
-.cart-items-flex {
-  flex-direction: column;
-  margin-top: 50px;
-}
+
 
 .cart-item-grid {
   grid-template-columns: 10% auto;
@@ -498,6 +495,8 @@ button:hover {
 .cart-item-close {
   color: gray;
   font-size: 15px;
+  background-color: transparent;
+  border: none;
 }
 
 .cart-item-close:hover {
@@ -807,4 +806,9 @@ button:hover {
 
 #cart-container {
   padding: 50px;
+}
+
+#cart-items-flex {
+  flex-direction: column;
+  margin-top: 50px;
 }

@@ -45,7 +45,7 @@
 
       <h1>Cart</h1>
 
-      <div class="cart-items-flex flex-container">
+      <div id="cart-items-flex" class="flex-container">
 
         <div class="cart-item-grid grid-container">
           <img id="product1" class="cart-item-image" src="https://images.unsplash.com/photo-1580129518790-0482fc5eed65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80" alt="black dog wearing blue harness">
@@ -57,120 +57,13 @@
 
               <div class="cart-item-selected-details">
                 
-                <div class="cart-item-size-grid">
-                  <div id="cart-size-selection-grid" class="cart-selection-grid grid-container">
-                    <div>
-                      <label class="detail-label">Size:</label>
-                      <label id="selected-size" class="selected-label">Tiny</label>
-                    </div>
-                    <form id="size-selection" class="selection-option-flex flex-container">
-                      <label class="container" onmouseover="hoverSize('Tiny')" onmouseout="mouseOutSize()">
-                        <input type="radio" checked="checked" name="size" value="tiny">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">T</div>
-                        </span>
-                      </label>
-                      <label class="container" onmouseover="hoverSize('Small')" onmouseout="mouseOutSize()">
-                        <input type="radio" name="size" value="small">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">S</div>
-                        </span>
-                      </label>
-                      <label class="container" onmouseover="hoverSize('Medium')" onmouseout="mouseOutSize()">
-                        <input type="radio" name="size" value="medium">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">M</div>
-                        </span>
-                      </label>
-                      <label class="container" onmouseover="hoverSize('Large')" onmouseout="mouseOutSize()">
-                        <input type="radio" name="size" value="large">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">L</div>
-                        </span>
-                      </label>
-                    </form>
-
-                  </div>
+                <div>
+                  <label class="detail-label">Size:</label>
+                  <label id="selected-size" class="detail-label bold">Tiny</label>
                 </div>
-                <div class="cart-item-color-grid">
-                  <div id="cart-color-selection-grid" class="cart-selection-grid grid-container">
-                    <div>
-                      <label class="detail-label">Color:</label>
-                      <label id="selected-color" class="selected-label">Strawberry</label>
-                    </div>
-                    <form id="color-selection" class="selection-option-flex flex-container">
-                      <label class="container" onmouseover="hoverColor('Strawberry')" onmouseout="mouseOutColor()">
-                        <input type="radio" checked="checked" name="color" value="strawberry">
-                        <span class="checkmark" style="background-color: red"></span>
-                      </label>
-                      <label class="container" onmouseover="hoverColor('Blackberry')" onmouseout="mouseOutColor()">
-                        <input type="radio" name="color" value="blackberry">
-                        <span class="checkmark" style="background-color: purple"></span>
-                      </label>
-                      <label class="container" onmouseover="hoverColor('Crazyberry')" onmouseout="mouseOutColor()">
-                        <input type="radio" name="color" value="crazyberry">
-                        <span class="checkmark" style="background-color: magenta;"></span>
-                      </label>
-                      <label class="container" onmouseover="hoverColor('Fire Orange')" onmouseout="mouseOutColor()">
-                        <input type="radio" name="color" value="fire-orange">
-                        <span class="checkmark" style="background-color: orange"></span>
-                      </label>
-                    </form>
-
-                  </div>
-                </div>
-                
-              </div>
-
-              <div class="cart-item-quantity">
-                <label class="detail-label">Quantity:</label>
-                <select id="quantity">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-
-              </div>
-              <div class="cart-item-price">$50</div>
-              <div class="close cart-item-close">&times;</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cart-item-grid grid-container">
-          <img id="product1" class="cart-item-image" src="https://images.unsplash.com/photo-1580129518790-0482fc5eed65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80" alt="black dog wearing blue harness">
-
-          <div>
-            <div class="cart-item-name">Harness</div>
-            
-            <div class="cart-item-info-grid grid-container">
-
-              <div class="cart-item-selected-details">
-                
-                <div class="cart-item-size-grid">
-                  <div id="cart-size-selection-grid" class="cart-selection-grid grid-container">
-                    <div>
-                      <label class="detail-label">Size:</label>
-                      <label id="selected-size" class="detail-label bold">Tiny</label>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="cart-item-color-grid">
-                  <div id="cart-color-selection-grid" class="cart-selection-grid grid-container">
-                    <div>
-                      <label class="detail-label">Color:</label>
-                      <label id="selected-color" class="detail-label bold">Strawberry</label>
-                    </div>
-
-                  </div>
+                <div>
+                  <label class="detail-label">Color:</label>
+                  <label id="selected-color" class="detail-label bold">Strawberry</label>
                 </div>
                 
               </div>
@@ -185,7 +78,7 @@
                 <label class="detail-label">Price:</label>
                 <label id="item-price" class="detail-label bold">$50</label>
               </div>
-              <div class="cart-item-close">Remove</div>
+              <button class="cart-item-close">Remove</button>
             </div>
           </div>
         </div>
