@@ -496,10 +496,13 @@ button:hover {
 }
 
 .cart-item-close {
-  height: max-content;
-  width: min-content;
-  position: relative;
-  top: 20%;
+  color: gray;
+  font-size: 15px;
+}
+
+.cart-item-close:hover {
+  cursor: pointer;
+  color: lightgray;
 }
 
 .cart-item-price {
@@ -615,6 +618,11 @@ button:hover {
 .cart-item-quantity > select {
   margin-top: 0px;
 }
+
+.bold {
+  font-weight: bold;
+}
+
 
 #slideshow-grid {
   width: 100%;

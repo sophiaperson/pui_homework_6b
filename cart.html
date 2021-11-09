@@ -158,34 +158,8 @@
                   <div id="cart-size-selection-grid" class="cart-selection-grid grid-container">
                     <div>
                       <label class="detail-label">Size:</label>
-                      <label id="selected-size" class="selected-label">Tiny</label>
+                      <label id="selected-size" class="detail-label bold">Tiny</label>
                     </div>
-                    <form id="size-selection" class="selection-option-flex flex-container">
-                      <label class="container" onmouseover="hoverSize('Tiny')" onmouseout="mouseOutSize()">
-                        <input type="radio" checked="checked" name="size" value="tiny">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">T</div>
-                        </span>
-                      </label>
-                      <label class="container" onmouseover="hoverSize('Small')" onmouseout="mouseOutSize()">
-                        <input type="radio" name="size" value="small">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">S</div>
-                        </span>
-                      </label>
-                      <label class="container" onmouseover="hoverSize('Medium')" onmouseout="mouseOutSize()">
-                        <input type="radio" name="size" value="medium">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">M</div>
-                        </span>
-                      </label>
-                      <label class="container" onmouseover="hoverSize('Large')" onmouseout="mouseOutSize()">
-                        <input type="radio" name="size" value="large">
-                        <span class="checkmark">
-                          <div class="centered" style="text-align: center;">L</div>
-                        </span>
-                      </label>
-                    </form>
 
                   </div>
                 </div>
@@ -193,26 +167,8 @@
                   <div id="cart-color-selection-grid" class="cart-selection-grid grid-container">
                     <div>
                       <label class="detail-label">Color:</label>
-                      <label id="selected-color" class="selected-label">Strawberry</label>
+                      <label id="selected-color" class="detail-label bold">Strawberry</label>
                     </div>
-                    <form id="color-selection" class="selection-option-flex flex-container">
-                      <label class="container" onmouseover="hoverColor('Strawberry')" onmouseout="mouseOutColor()">
-                        <input type="radio" checked="checked" name="color" value="strawberry">
-                        <span class="checkmark" style="background-color: red"></span>
-                      </label>
-                      <label class="container" onmouseover="hoverColor('Blackberry')" onmouseout="mouseOutColor()">
-                        <input type="radio" name="color" value="blackberry">
-                        <span class="checkmark" style="background-color: purple"></span>
-                      </label>
-                      <label class="container" onmouseover="hoverColor('Crazyberry')" onmouseout="mouseOutColor()">
-                        <input type="radio" name="color" value="crazyberry">
-                        <span class="checkmark" style="background-color: magenta;"></span>
-                      </label>
-                      <label class="container" onmouseover="hoverColor('Fire Orange')" onmouseout="mouseOutColor()">
-                        <input type="radio" name="color" value="fire-orange">
-                        <span class="checkmark" style="background-color: orange"></span>
-                      </label>
-                    </form>
 
                   </div>
                 </div>
@@ -221,22 +177,15 @@
 
               <div class="cart-item-quantity">
                 <label class="detail-label">Quantity:</label>
-                <select id="quantity">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
+                <label id="selected-quantity" class="detail-label bold">1</label>
 
               </div>
-              <div class="cart-item-price">$50</div>
-              <div class="close cart-item-close">&times;</div>
+
+              <div>
+                <label class="detail-label">Price:</label>
+                <label id="item-price" class="detail-label bold">$50</label>
+              </div>
+              <div class="cart-item-close">Remove</div>
             </div>
           </div>
         </div>
