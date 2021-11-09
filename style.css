@@ -622,6 +622,9 @@ button:hover {
   font-weight: bold;
 }
 
+.active-cart {
+
+}
 
 #slideshow-grid {
   width: 100%;
@@ -702,14 +705,14 @@ button:hover {
   color: black;
 }
 
-#cart-icon:hover {
+.navlink > #cart-icon.active-cart {
+  filter: invert(33%) sepia(64%) saturate(1491%) hue-rotate(122deg) brightness(100%) contrast(102%);
+}
+
+#cart-icon:hover:not(.active-cart) {
   filter: invert(97%) sepia(6%) saturate(3%) hue-rotate(314deg) brightness(92%) contrast(91%);
   display: inline-block;
   position: relative;
-}
-
-.active #cart-icon {
-  filter: invert(33%) sepia(64%) saturate(1491%) hue-rotate(122deg) brightness(100%) contrast(102%);
 }
 
 

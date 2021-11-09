@@ -200,8 +200,9 @@ function createCartItem(item) {
   closeButton.classList.add("cart-item-close")
   closeButton.innerHTML = "Remove"
   closeButton.addEventListener("click", function () {
-    console.log("Remove Button Clicked")
-  }) 
+    removeItem(this)
+  }
+) 
 
   // attach items to item grid container
   itemGrid.appendChild(itemImage)
@@ -228,22 +229,34 @@ function createCartItem(item) {
 }
 
 
-// remove item from sessionStorage
+// remove cart item from sessionStorage
 function removeItem(element) {
-  // get array of all cart items
+  // get array of all cart items from sessionStorage
   let itemsString = sessionStorage.getItem('cartItems')
   let items = JSON.parse(itemsString)
 
-  // find name of item to remove
-  let item = element.classList[1]
+  console.log(element)
 
-  // remove item from all cart items
-  let index = items.indexOf(item)
-  items.splice(0, index)
+  // find item in DOM to remove
+  let infoGrid = element.parentNode // div class="cart-item-info-grid"
+  console.log(infoGrid)
+  let itemDiv = infoGrid.parentNode // div 
+  console.log(itemDiv)
+  let itemGrid = itemDiv.parentNode // div class="cart-item-grid"
+  console.log(itemGrid)
+  let itemsFlex = itemGrid.parentNode // div id="cart-items-flex"
+  console.log(itemsFlex)
+
+  // remove item from all cart items in array 
+  let itemsFlexCollection = itemsFlex.children
+  let itemsFlexArray = Array.from(itemsFlexCollection)
+  let index = itemsFlexArray.indexOf(itemGrid)
+  items.splice(index, 1)
 
   // update sessionStorage for all cart items
   let newItemsString = JSON.stringify(items)
   sessionStorage.setItem("cartItems", newItemsString)
+  window.location.reload()
 }
 
 function init() {
